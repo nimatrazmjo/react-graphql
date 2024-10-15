@@ -1,11 +1,23 @@
+import { Link, Outlet } from 'react-router-dom'
 import './App.css'
-import Location from './components/Location'
 
 function App() {
 
   return (
-    <div className='flex  items-center justify-center min-h-screen text-2xl font-bold text-slate-600'>
-      <Location />
+    <div className='bg-zinc-400'>
+      <header>
+        <nav>
+          <ul>
+            <li><Link to="/">Location</Link></li>
+            <li><Link to="/dog">Dogs</Link></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Render the child routes at this position */}
+      <Outlet />
+
+      <footer>Footer content here</footer>
     </div>
   )
 }
